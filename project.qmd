@@ -97,7 +97,7 @@ skim(all_seasons) %>%
 The following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).
 
 ```{r}
-SRDiffResult %>%
+SRDiffResult <- SRDiffResult %>%
   group_by(season,SR.Diff,Result,total_matches) %>%
   count() %>%
   summarize( Prop = round( n / total_matches * 100, digits = 1) ) %>%
