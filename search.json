@@ -137,7 +137,7 @@
     "href": "project.html#skill-fluctuation-per-season",
     "title": "DANL 200 Project",
     "section": "2.4 Skill Fluctuation Per Season",
-    "text": "2.4 Skill Fluctuation Per Season\nThe following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,)) +\n  xlab('Match Number') +\n  ylab('Skill Rating') +\n  facet_wrap(.~season)\n\n\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,color = season)) +\n  xlab('Match Number') +\n  ylab('Skill Rating')"
+    "text": "2.4 Skill Fluctuation Per Season\nThe following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,)) +\n  xlab('Match Number') +\n  ylab('Skill Rating') +\n  facet_wrap(.~season)"
   },
   {
     "objectID": "project.html#wld-versus-player-left-match",

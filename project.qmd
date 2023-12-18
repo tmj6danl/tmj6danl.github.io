@@ -143,11 +143,6 @@ ggplot(data = d3) +
   ylab('Skill Rating') +
   facet_wrap(.~season)
 
-ggplot(data = d3) +
-  geom_point(mapping = aes(x = Game..,y = End.SR,color = season)) +
-  xlab('Match Number') +
-  ylab('Skill Rating') 
- 
 ```
 
 
