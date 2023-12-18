@@ -130,7 +130,7 @@
     "href": "project.html#wld-versus-team-sr-differential",
     "title": "DANL 200 Project",
     "section": "2.2 W/L/D versus Team SR Differential",
-    "text": "2.2 W/L/D versus Team SR Differential\nThe following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).\n\nd4 &lt;- SRDiffResult %&gt;%\n  group_by(season,SR.Diff,Result,total_matches) %&gt;%\n  count() %&gt;%\n  summarize( Prop = round( n / total_matches * 100, digits = 1) ) %&gt;%\n  select(season,SR.Diff,Result,Prop)\n\nSRDiffResult &lt;- d4"
+    "text": "2.2 W/L/D versus Team SR Differential\nThe following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).\n\nSRDiffResult &lt;- SRDiffResult"
   },
   {
     "objectID": "project.html#skill-fluctuation-per-season",
