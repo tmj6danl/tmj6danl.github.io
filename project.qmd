@@ -1,12 +1,8 @@
 ---
-title: DANL Project
+title: DANL 200 Project
 subtitle: "Data-Driven Mastery: Unlocking Business Potential"
 author: 
-  - Name 1
-  - Name 2
-  - Name 3
-  - Name 4
-  - Name 5
+  - Taylor Johnson
 
 toc: true
 toc-title: "Table of Contents"
@@ -41,52 +37,86 @@ theme_set(theme_ipsum()+
                                margin = margin(0,10,0,0))
                 )
           )
+
+d = read.csv("all_seasons.csv")
+
+d2 <- d[!d$Team.SR.avg <= 0 & !d$Team.SR.avg == 'P' & !d$Enemy.SR.avg == 'P',]
+
+d2 <- transform(d2, Team.SR.avg = as.numeric(Team.SR.avg),
+                Enemy.SR.avg = as.numeric(Enemy.SR.avg))
+
+d2 <- d2 %>%
+  select(season,Team.SR.avg,Enemy.SR.avg,Result) %>%
+  mutate(SR.Diff = Enemy.SR.avg - Team.SR.avg)
+
+SRDiffResult <- d2
+
+SRDiffResult$SR.Diff <- ifelse(d2$SR.Diff < 0, 'advantage', "disadvantage")
+
+SRDiffResult <- SRDiffResult %>%
+  group_by(season,SR.Diff) %>%
+  mutate( total_matches = n())
+
+d3 <- d[!d$End.SR == 'P',]
+
+d3 <- transform(d3,End.SR = as.numeric(End.SR))
+
 ```
 
 
 
 # Introduction
 
-About this project :clap:
-
-```{r}
-1 + 1
-```
+This Project is an exploration of an individual's performance during four seasons of the competitive FPS game Overwatch.
 
 
 # Data
 
-The data.frame `mpg` contains a subset of the fuel economy data that the EPA makes available on [https://fueleconomy.gov/](https://fueleconomy.gov/). It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car. :oncoming_automobile:
-
+The data.frame `all.seasons` consists of an individual's personal competitive ranked data that he manually recorded while playing seasons 3, 4, 9, and 10 of the FPS game Overwatch. Season 3 appears to have missing information, but we can attribute this to the fact that additional metrics were introduced in later seasons. The data provided is comprehensive, consisting of all of the data that is shown to the player during and after each match.
 
 ## Summary Statistics
 
 ```{r}
-mpg <- ggplot2::mpg
+all_seasons <- d
 ```
 
 ```{r}
 #| results: asis
 #| echo: false
-rmarkdown::paged_table(mpg) 
+rmarkdown::paged_table(all_seasons) 
 ```
 
 
 ```{r}
-skim(mpg) %>% 
+skim(all_seasons) %>% 
   select(-n_missing)
 ```
 
+## W/L/D versus Team SR Differential
+The following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).
 
-## MPG and a Type of Cars
-The following boxplot shows how the distribution of highway MPG (`hwy`) varies by a type of cars (`class`) :blue_car: :truck: :minibus:.
+```{r}
+d4 <- SRDiffResult %>%
+  group_by(season,SR.Diff,Result,total_matches) %>%
+  count() %>%
+  summarize( Prop = round( n / total_matches * 100, digits = 1) ) %>%
+  select(season,SR.Diff,Result,Prop)
+
+SRDiffResult <- d4
+```
+
+## Skill Fluctuation Per Season
+The following is a visualization of the fluctuation of this individual's Skill Ranking (SR) after each match for each of the four seasons data is available.
 
 
 ```{r}
-ggplot(data = mpg) +
-  geom_boxplot(aes(x = class, y = hwy, fill = class),
-               show.legend = F) +
-  labs(x = "Class", y = "Highway\nMPG") 
+
+ggplot(data = d3) +
+  geom_point(mapping = aes(x = Game..,y = End.SR,)) +
+  xlab('Match Number') +
+  ylab('Skill Rating') +
+  facet_wrap(.~season)
+ 
 ```
 
 

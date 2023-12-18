@@ -107,22 +107,36 @@
   {
     "objectID": "project.html",
     "href": "project.html",
-    "title": "DANL Project",
+    "title": "DANL 200 Project",
     "section": "",
-    "text": "About this project 👏\n\n1 + 1\n\n[1] 2"
+    "text": "This Project is an exploration of an individual’s performance during four seasons of the competitive FPS game Overwatch."
   },
   {
     "objectID": "project.html#summary-statistics",
     "href": "project.html#summary-statistics",
-    "title": "DANL Project",
+    "title": "DANL 200 Project",
     "section": "2.1 Summary Statistics",
-    "text": "2.1 Summary Statistics\n\nmpg &lt;- ggplot2::mpg\n\n\n\n\n  \n\n\n\nskim(mpg) %&gt;% \n  select(-n_missing)\n\n\nData summary\n\n\nName\nmpg\n\n\nNumber of rows\n234\n\n\nNumber of columns\n11\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nmanufacturer\n1\n4\n10\n0\n15\n0\n\n\nmodel\n1\n2\n22\n0\n38\n0\n\n\ntrans\n1\n8\n10\n0\n10\n0\n\n\ndrv\n1\n1\n1\n0\n3\n0\n\n\nfl\n1\n1\n1\n0\n5\n0\n\n\nclass\n1\n3\n10\n0\n7\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\ndispl\n1\n3.47\n1.29\n1.6\n2.4\n3.3\n4.6\n7\n▇▆▆▃▁\n\n\nyear\n1\n2003.50\n4.51\n1999.0\n1999.0\n2003.5\n2008.0\n2008\n▇▁▁▁▇\n\n\ncyl\n1\n5.89\n1.61\n4.0\n4.0\n6.0\n8.0\n8\n▇▁▇▁▇\n\n\ncty\n1\n16.86\n4.26\n9.0\n14.0\n17.0\n19.0\n35\n▆▇▃▁▁\n\n\nhwy\n1\n23.44\n5.95\n12.0\n18.0\n24.0\n27.0\n44\n▅▅▇▁▁"
+    "text": "2.1 Summary Statistics\n\nall_seasons &lt;- d\n\n\n\n\n  \n\n\n\nskim(all_seasons) %&gt;% \n  select(-n_missing)\n\n\nData summary\n\n\nName\nall_seasons\n\n\nNumber of rows\n582\n\n\nNumber of columns\n38\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n18\n\n\nnumeric\n20\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nStart.SR\n1\n1\n4\n0\n367\n0\n\n\nEnd.SR\n1\n1\n4\n0\n368\n0\n\n\nTeam.SR.avg\n1\n0\n6\n3\n425\n0\n\n\nEnemy.SR.avg\n1\n0\n6\n3\n413\n0\n\n\nRole.1\n1\n0\n7\n276\n5\n0\n\n\nRole.2\n1\n0\n7\n522\n5\n0\n\n\nResult\n1\n3\n4\n0\n3\n0\n\n\nLeaver\n1\n0\n10\n1\n4\n0\n\n\nMap\n1\n0\n21\n276\n19\n0\n\n\nMode\n1\n0\n14\n276\n5\n0\n\n\nMatch.Time\n1\n0\n5\n279\n260\n0\n\n\nElim_medal\n1\n0\n6\n279\n5\n0\n\n\nObj_kills_medal\n1\n0\n6\n280\n5\n0\n\n\nObj_time\n1\n0\n5\n279\n197\n0\n\n\nObj_time_career\n1\n0\n5\n279\n53\n0\n\n\nObj_time_medal\n1\n0\n6\n280\n5\n0\n\n\nDmg_medal\n1\n0\n6\n280\n5\n0\n\n\nHeal_medal\n1\n0\n6\n280\n5\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nseason\n1.00\n6.60\n2.91\n3.00\n4.00\n9.00\n9.00\n10.00\n▇▁▁▁▇\n\n\nGame..\n1.00\n117.20\n84.73\n1.00\n49.00\n97.50\n168.75\n314.00\n▇▇▃▂▂\n\n\nSR.Change\n0.78\n3.23\n25.20\n-46.00\n-23.00\n19.00\n25.00\n77.00\n▇▂▇▂▁\n\n\nTeam.Stack\n0.52\n1.96\n0.92\n1.00\n1.00\n2.00\n2.00\n5.00\n▇▇▃▁▁\n\n\nEnemy.Stack\n0.52\n2.06\n0.97\n1.00\n1.00\n2.00\n2.00\n6.00\n▇▂▁▁▁\n\n\nStreak\n1.00\n0.31\n2.60\n-11.00\n-1.00\n1.00\n2.00\n10.00\n▁▁▇▃▁\n\n\nGold.medals\n0.98\n1.02\n0.95\n0.00\n0.00\n1.00\n1.75\n5.00\n▇▂▁▁▁\n\n\nSilver.medals\n0.92\n0.91\n0.83\n0.00\n0.00\n1.00\n1.00\n4.00\n▆▇▃▁▁\n\n\nBronze.medals\n0.92\n0.69\n0.80\n0.00\n0.00\n1.00\n1.00\n3.00\n▇▆▁▂▁\n\n\nNo.medals\n0.52\n2.18\n1.22\n0.00\n1.00\n2.00\n3.00\n5.00\n▇▇▆▃▁\n\n\nElim\n0.52\n19.85\n10.62\n0.00\n12.00\n19.00\n26.50\n60.00\n▅▇▅▁▁\n\n\nElim_career\n0.52\n17.48\n2.86\n0.00\n15.50\n17.58\n19.09\n23.87\n▁▁▁▇▃\n\n\nObj_kills\n0.52\n11.35\n7.18\n0.00\n6.00\n10.00\n16.00\n38.00\n▆▇▃▂▁\n\n\nObj_kills_career\n0.52\n10.13\n2.00\n0.00\n8.34\n10.33\n11.28\n20.29\n▁▁▇▂▁\n\n\nDmg\n0.52\n5948.56\n2977.27\n0.00\n3846.50\n5752.00\n7551.00\n16860.00\n▃▇▅▁▁\n\n\nDmg_career\n0.52\n4982.70\n687.30\n85.29\n4909.00\n5040.00\n5190.50\n8099.00\n▁▁▂▇▁\n\n\nHeal\n0.52\n6481.20\n5538.80\n0.00\n0.00\n6437.50\n10589.25\n21158.00\n▇▅▅▂▁\n\n\nHeal_career\n0.52\n5604.70\n2285.94\n0.00\n4334.00\n6108.00\n6558.00\n9690.00\n▂▁▃▇▃\n\n\nDeath\n0.52\n9.16\n4.06\n0.00\n6.00\n9.00\n12.00\n23.00\n▂▇▆▂▁\n\n\nDeath_career\n0.52\n7.32\n0.63\n3.95\n7.03\n7.16\n7.76\n9.64\n▁▁▇▅▁"
   },
   {
     "objectID": "project.html#mpg-and-a-type-of-cars",
     "href": "project.html#mpg-and-a-type-of-cars",
-    "title": "DANL Project",
+    "title": "DANL 200 Project",
     "section": "2.2 MPG and a Type of Cars",
-    "text": "2.2 MPG and a Type of Cars\nThe following boxplot shows how the distribution of highway MPG (hwy) varies by a type of cars (class) 🚙 🚚 🚐.\n\nggplot(data = mpg) +\n  geom_boxplot(aes(x = class, y = hwy, fill = class),\n               show.legend = F) +\n  labs(x = \"Class\", y = \"Highway\\nMPG\")"
+    "text": "2.2 MPG and a Type of Cars\nThe following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,)) +\n  xlab('Match Number') +\n  ylab('Skill Rating') +\n  facet_wrap(.~season)"
+  },
+  {
+    "objectID": "project.html#wld-versus-team-sr-differential",
+    "href": "project.html#wld-versus-team-sr-differential",
+    "title": "DANL 200 Project",
+    "section": "2.2 W/L/D versus Team SR Differential",
+    "text": "2.2 W/L/D versus Team SR Differential\nThe following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).\n\nd4 &lt;- SRDiffResult %&gt;%\n  group_by(season,SR.Diff,Result,total_matches) %&gt;%\n  count() %&gt;%\n  summarize( Prop = round( n / total_matches * 100, digits = 1) ) %&gt;%\n  select(season,SR.Diff,Result,Prop)\n\nSRDiffResult &lt;- d4"
+  },
+  {
+    "objectID": "project.html#skill-fluctuation-per-season",
+    "href": "project.html#skill-fluctuation-per-season",
+    "title": "DANL 200 Project",
+    "section": "2.3 Skill Fluctuation Per Season",
+    "text": "2.3 Skill Fluctuation Per Season\nThe following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,)) +\n  xlab('Match Number') +\n  ylab('Skill Rating') +\n  facet_wrap(.~season)"
   }
 ]
