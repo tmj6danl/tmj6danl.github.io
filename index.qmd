@@ -1,10 +1,10 @@
 ---
 title: "Taylor Johnson"
 about:
-  template: marquee # jolla  trestles  solana  marquee broadside
+  template: broadside # jolla  trestles  solana  marquee broadside
   image: Taylor.jpg
-  #image-width: 16em
-  #image-shape: rectangle # rectangle  round  rounded
+  image-width: 16em
+  image-shape: rectangle # rectangle  round  rounded
   links:
     - icon: linkedin
       text: LinkedIn
