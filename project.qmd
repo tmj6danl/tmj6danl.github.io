@@ -38,9 +38,9 @@ theme_set(theme_ipsum()+
                 )
           )
 
-d = read.csv("all_seasons.csv")
+all_seasons = read.csv("all_seasons.csv")
 
-d2 <- d[!d$Team.SR.avg <= 0 & !d$Team.SR.avg == 'P' & !d$Enemy.SR.avg == 'P',]
+d2 <- all_seasons[!all_seasons$Team.SR.avg <= 0 & !all_seasons$Team.SR.avg == 'P' & !all_seasons$Enemy.SR.avg == 'P',]
 
 d2 <- transform(d2, Team.SR.avg = as.numeric(Team.SR.avg),
                 Enemy.SR.avg = as.numeric(Enemy.SR.avg))
@@ -57,15 +57,10 @@ SRDiffResult <- SRDiffResult %>%
   group_by(season,SR.Diff) %>%
   mutate( total_matches = n())
 
-d3 <- d[!d$End.SR == 'P',]
+d3 <- all_seasons[!all_seasons$End.SR == 'P',]
 
 d3 <- transform(d3,End.SR = as.numeric(End.SR))
 
-SRDiffResult <- SRDiffResult %>%
-  group_by(season,SR.Diff,Result,total_matches) %>%
-  count() %>%
-  summarize( Prop = round( n / total_matches * 100, digits = 1) ) %>%
-  select(season,SR.Diff,Result,Prop)
 
 ```
 
@@ -83,7 +78,7 @@ The data.frame `all.seasons` consists of an individual's personal competitive ra
 ## Summary Statistics
 
 ```{r}
-all_seasons <- d
+all_seasons <- all_seasons
 ```
 
 ```{r}
@@ -102,7 +97,17 @@ skim(all_seasons) %>%
 The following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).
 
 ```{r}
-SRDiffResult <- SRDiffResult
+SRDiffResult %>%
+  group_by(season,SR.Diff,Result,total_matches) %>%
+  count() %>%
+  summarize( Prop = round( n / total_matches * 100, digits = 1) ) %>%
+  select(season,SR.Diff,Result,Prop)
+```
+
+```{r}
+#| results: asis
+#| echo: false
+rmarkdown::paged_table(SRDiffResult) 
 ```
 
 ## Skill Fluctuation Per Season
