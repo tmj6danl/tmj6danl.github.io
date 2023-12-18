@@ -98,7 +98,7 @@ skim(all_seasons) %>%
 ```
 
 ## W/L/D versus Player Left Match
-The following shows the percentage of the individual either won, lost, or drew depending on if a player left his team or the enemy team. 
+The following shows the percentage of matches the individual either won, lost, or drew depending on if a player left his team or the enemy team. 
 
 ```{r}
 WLDLeaver <- WLDLeaver %>%

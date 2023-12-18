@@ -144,6 +144,6 @@
     "href": "project.html#wld-versus-player-left-match",
     "title": "DANL 200 Project",
     "section": "2.2 W/L/D versus Player Left Match",
-    "text": "2.2 W/L/D versus Player Left Match\nThe following shows the percentage of the individual either won, lost, or drew depending on if a player left his team or the enemy team.\n\nWLDLeaver &lt;- WLDLeaver %&gt;%\n  group_by(season,Leaver,Result,Total_leaver) %&gt;%\n  count() %&gt;%\n  summarize(Prop = n / Total_leaver * 100) %&gt;%\n  select(season,Leaver,Result,Prop)"
+    "text": "2.2 W/L/D versus Player Left Match\nThe following shows the percentage of matches the individual either won, lost, or drew depending on if a player left his team or the enemy team.\n\nWLDLeaver &lt;- WLDLeaver %&gt;%\n  group_by(season,Leaver,Result,Total_leaver) %&gt;%\n  count() %&gt;%\n  summarize(Prop = n / Total_leaver * 100) %&gt;%\n  select(season,Leaver,Result,Prop)"
   }
 ]
