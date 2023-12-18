@@ -1,17 +1,10 @@
 ---
-title: "Taylor Johnson" 
-format:
-  html:
-    theme: cyborg
-
----
-
+title: "Taylor Johnson"
 about:
-  template: broadside  # jolla  trestles  solana  marquee  trestles
+  template: marquee # jolla  trestles  solana  marquee broadside
   image: Taylor.jpg
-  image-width: 16em
-  image-shape: rectangle # rectangle  round  rounded
-  
+  #image-width: 16em
+  #image-shape: rectangle # rectangle  round  rounded
   links:
     - icon: linkedin
       text: LinkedIn
@@ -22,6 +15,11 @@ about:
     - icon: file-earmark-pdf
       text: Resumé
       href: https://tmj6danl.github.io/Resume.pdf
+format:
+  html:
+    theme: cyborg
+
+---
 
 Taylor Johnson is an Applied Mathematics major at SUNY Geneseo. He has an analytical mind with a knack for problem solving.
 Taylor is currently looking for an entry level position in the Actuarial field.
