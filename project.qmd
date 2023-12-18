@@ -61,6 +61,10 @@ d3 <- all_seasons[!all_seasons$End.SR == 'P',]
 
 d3 <- transform(d3,End.SR = as.numeric(End.SR))
 
+WLDLeaver <- all_seasons[!all_seasons$Leaver == "No" & !all_seasons$Leaver == "",] %>%
+  group_by(season,Leaver) %>%
+  mutate( Total_leaver = n() )
+
 
 ```
 
@@ -91,6 +95,23 @@ rmarkdown::paged_table(all_seasons)
 ```{r}
 skim(all_seasons) %>% 
   select(-n_missing)
+```
+
+## W/L/D versus Player Left Match
+The following shows the percentage of the individual either won, lost, or drew depending on if a player left his team or the enemy team. 
+
+```{r}
+WLDLeaver <- WLDLeaver %>%
+  group_by(season,Leaver,Result,Total_leaver) %>%
+  count() %>%
+  summarize(Prop = n / Total_leaver * 100) %>%
+  select(season,Leaver,Result,Prop)
+```
+
+```{r}
+#| results: asis
+#| echo: false
+rmarkdown::paged_table(WLDLeaver) 
 ```
 
 ## W/L/D versus Team SR Differential

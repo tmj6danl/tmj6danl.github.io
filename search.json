@@ -129,14 +129,21 @@
     "objectID": "project.html#wld-versus-team-sr-differential",
     "href": "project.html#wld-versus-team-sr-differential",
     "title": "DANL 200 Project",
-    "section": "2.2 W/L/D versus Team SR Differential",
-    "text": "2.2 W/L/D versus Team SR Differential\nThe following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).\n\nSRDiffResult &lt;- SRDiffResult %&gt;%\n  group_by(season,SR.Diff,Result,total_matches) %&gt;%\n  count() %&gt;%\n  summarize( Prop = round( n / total_matches * 100, digits = 1) ) %&gt;%\n  select(season,SR.Diff,Result,Prop)"
+    "section": "2.3 W/L/D versus Team SR Differential",
+    "text": "2.3 W/L/D versus Team SR Differential\nThe following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).\n\nSRDiffResult &lt;- SRDiffResult %&gt;%\n  group_by(season,SR.Diff,Result,total_matches) %&gt;%\n  count() %&gt;%\n  summarize( Prop = round( n / total_matches * 100, digits = 1) ) %&gt;%\n  select(season,SR.Diff,Result,Prop)"
   },
   {
     "objectID": "project.html#skill-fluctuation-per-season",
     "href": "project.html#skill-fluctuation-per-season",
     "title": "DANL 200 Project",
-    "section": "2.3 Skill Fluctuation Per Season",
-    "text": "2.3 Skill Fluctuation Per Season\nThe following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,)) +\n  xlab('Match Number') +\n  ylab('Skill Rating') +\n  facet_wrap(.~season)"
+    "section": "2.4 Skill Fluctuation Per Season",
+    "text": "2.4 Skill Fluctuation Per Season\nThe following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,)) +\n  xlab('Match Number') +\n  ylab('Skill Rating') +\n  facet_wrap(.~season)"
+  },
+  {
+    "objectID": "project.html#wld-versus-player-left-match",
+    "href": "project.html#wld-versus-player-left-match",
+    "title": "DANL 200 Project",
+    "section": "2.2 W/L/D versus Player Left Match",
+    "text": "2.2 W/L/D versus Player Left Match\nThe following shows the percentage of the individual either won, lost, or drew depending on if a player left his team or the enemy team.\n\nWLDLeaver &lt;- WLDLeaver %&gt;%\n  group_by(season,Leaver,Result,Total_leaver) %&gt;%\n  count() %&gt;%\n  summarize(Prop = n / Total_leaver * 100) %&gt;%\n  select(season,Leaver,Result,Prop)"
   }
 ]

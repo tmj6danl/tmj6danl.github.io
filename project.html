@@ -146,8 +146,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2</span> Data</a>
   <ul class="collapse">
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">2.1</span> Summary Statistics</a></li>
-  <li><a href="#wld-versus-team-sr-differential" id="toc-wld-versus-team-sr-differential" class="nav-link" data-scroll-target="#wld-versus-team-sr-differential"><span class="header-section-number">2.2</span> W/L/D versus Team SR Differential</a></li>
-  <li><a href="#skill-fluctuation-per-season" id="toc-skill-fluctuation-per-season" class="nav-link" data-scroll-target="#skill-fluctuation-per-season"><span class="header-section-number">2.3</span> Skill Fluctuation Per Season</a></li>
+  <li><a href="#wld-versus-player-left-match" id="toc-wld-versus-player-left-match" class="nav-link" data-scroll-target="#wld-versus-player-left-match"><span class="header-section-number">2.2</span> W/L/D versus Player Left Match</a></li>
+  <li><a href="#wld-versus-team-sr-differential" id="toc-wld-versus-team-sr-differential" class="nav-link" data-scroll-target="#wld-versus-team-sr-differential"><span class="header-section-number">2.3</span> W/L/D versus Team SR Differential</a></li>
+  <li><a href="#skill-fluctuation-per-season" id="toc-skill-fluctuation-per-season" class="nav-link" data-scroll-target="#skill-fluctuation-per-season"><span class="header-section-number">2.4</span> Skill Fluctuation Per Season</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -696,15 +697,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="wld-versus-team-sr-differential" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="wld-versus-team-sr-differential"><span class="header-section-number">2.2</span> W/L/D versus Team SR Differential</h2>
+<section id="wld-versus-player-left-match" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="wld-versus-player-left-match"><span class="header-section-number">2.2</span> W/L/D versus Player Left Match</h2>
+<p>The following shows the percentage of the individual either won, lost, or drew depending on if a player left his team or the enemy team.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>WLDLeaver <span class="ot">&lt;-</span> WLDLeaver <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(season,Leaver,Result,Total_leaver) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">Prop =</span> n <span class="sc">/</span> Total_leaver <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(season,Leaver,Result,Prop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output-display">
+
+<div data-pagedtable="false">
+  <script data-pagedtable-source="" type="application/json">
+{"columns":[{"label":["season"],"name":[1],"type":["int"],"align":["right"]},{"label":["Leaver"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Result"],"name":[3],"type":["chr"],"align":["left"]},{"label":["Prop"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"3","2":"Enemy team","3":"Win","4":"100.00000"},{"1":"3","2":"My team","3":"Loss","4":"100.00000"},{"1":"4","2":"Enemy team","3":"Loss","4":"16.66667"},{"1":"4","2":"Enemy team","3":"Win","4":"83.33333"},{"1":"4","2":"My team","3":"Draw","4":"100.00000"},{"1":"9","2":"Enemy team","3":"Win","4":"100.00000"},{"1":"9","2":"My team","3":"Loss","4":"100.00000"},{"1":"10","2":"Enemy team","3":"Win","4":"100.00000"},{"1":"10","2":"My team","3":"Loss","4":"100.00000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+</section>
+<section id="wld-versus-team-sr-differential" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="wld-versus-team-sr-differential"><span class="header-section-number">2.3</span> W/L/D versus Team SR Differential</h2>
 <p>The following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>SRDiffResult <span class="ot">&lt;-</span> SRDiffResult <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(season,SR.Diff,Result,total_matches) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>( <span class="at">Prop =</span> <span class="fu">round</span>( n <span class="sc">/</span> total_matches <span class="sc">*</span> <span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">1</span>) ) <span class="sc">%&gt;%</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(season,SR.Diff,Result,Prop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>SRDiffResult <span class="ot">&lt;-</span> SRDiffResult <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(season,SR.Diff,Result,total_matches) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>( <span class="at">Prop =</span> <span class="fu">round</span>( n <span class="sc">/</span> total_matches <span class="sc">*</span> <span class="dv">100</span>, <span class="at">digits =</span> <span class="dv">1</span>) ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(season,SR.Diff,Result,Prop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell-output-display">
 
@@ -715,17 +735,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="skill-fluctuation-per-season" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="skill-fluctuation-per-season"><span class="header-section-number">2.3</span> Skill Fluctuation Per Season</h2>
+<section id="skill-fluctuation-per-season" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="skill-fluctuation-per-season"><span class="header-section-number">2.4</span> Skill Fluctuation Per Season</h2>
 <p>The following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d3) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Game..,<span class="at">y =</span> End.SR,)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">'Match Number'</span>) <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">'Skill Rating'</span>) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>season)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d3) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Game..,<span class="at">y =</span> End.SR,)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">'Match Number'</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">'Skill Rating'</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span>season)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="864"></p>
+<p><img src="project_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 
