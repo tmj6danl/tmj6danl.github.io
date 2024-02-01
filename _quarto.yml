@@ -11,6 +11,9 @@ website:
         href: project.qmd
       - text: Blog
         href: Resume.pdf
+      - text: Python Data Analysis
+        href: basic-python-intro.ipynb
+        href: danl-210-quarto.qmd
   page-footer: 
     center: "Powered with GitHub and Quarto<br>© YOUR NAME, 2023"
 

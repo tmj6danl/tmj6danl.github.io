@@ -1,24 +1,45 @@
 [
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "DANL 200 Project",
     "section": "",
-    "text": "This is a post with executable code with no space in the folder name.\n\n1 + 1\n\n[1] 2"
+    "text": "This Project is an exploration of an individual’s performance during four seasons of the competitive FPS game Overwatch."
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "objectID": "project.html#summary-statistics",
+    "href": "project.html#summary-statistics",
+    "title": "DANL 200 Project",
+    "section": "2.1 Summary Statistics",
+    "text": "2.1 Summary Statistics\n\nall_seasons &lt;- all_seasons\n\n\n\n\n  \n\n\n\nskim(all_seasons) %&gt;% \n  select(-n_missing)\n\n\nData summary\n\n\nName\nall_seasons\n\n\nNumber of rows\n582\n\n\nNumber of columns\n38\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n18\n\n\nnumeric\n20\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nStart.SR\n1\n1\n4\n0\n367\n0\n\n\nEnd.SR\n1\n1\n4\n0\n368\n0\n\n\nTeam.SR.avg\n1\n0\n6\n3\n425\n0\n\n\nEnemy.SR.avg\n1\n0\n6\n3\n413\n0\n\n\nRole.1\n1\n0\n7\n276\n5\n0\n\n\nRole.2\n1\n0\n7\n522\n5\n0\n\n\nResult\n1\n3\n4\n0\n3\n0\n\n\nLeaver\n1\n0\n10\n1\n4\n0\n\n\nMap\n1\n0\n21\n276\n19\n0\n\n\nMode\n1\n0\n14\n276\n5\n0\n\n\nMatch.Time\n1\n0\n5\n279\n260\n0\n\n\nElim_medal\n1\n0\n6\n279\n5\n0\n\n\nObj_kills_medal\n1\n0\n6\n280\n5\n0\n\n\nObj_time\n1\n0\n5\n279\n197\n0\n\n\nObj_time_career\n1\n0\n5\n279\n53\n0\n\n\nObj_time_medal\n1\n0\n6\n280\n5\n0\n\n\nDmg_medal\n1\n0\n6\n280\n5\n0\n\n\nHeal_medal\n1\n0\n6\n280\n5\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nseason\n1.00\n6.60\n2.91\n3.00\n4.00\n9.00\n9.00\n10.00\n▇▁▁▁▇\n\n\nGame..\n1.00\n117.20\n84.73\n1.00\n49.00\n97.50\n168.75\n314.00\n▇▇▃▂▂\n\n\nSR.Change\n0.78\n3.23\n25.20\n-46.00\n-23.00\n19.00\n25.00\n77.00\n▇▂▇▂▁\n\n\nTeam.Stack\n0.52\n1.96\n0.92\n1.00\n1.00\n2.00\n2.00\n5.00\n▇▇▃▁▁\n\n\nEnemy.Stack\n0.52\n2.06\n0.97\n1.00\n1.00\n2.00\n2.00\n6.00\n▇▂▁▁▁\n\n\nStreak\n1.00\n0.31\n2.60\n-11.00\n-1.00\n1.00\n2.00\n10.00\n▁▁▇▃▁\n\n\nGold.medals\n0.98\n1.02\n0.95\n0.00\n0.00\n1.00\n1.75\n5.00\n▇▂▁▁▁\n\n\nSilver.medals\n0.92\n0.91\n0.83\n0.00\n0.00\n1.00\n1.00\n4.00\n▆▇▃▁▁\n\n\nBronze.medals\n0.92\n0.69\n0.80\n0.00\n0.00\n1.00\n1.00\n3.00\n▇▆▁▂▁\n\n\nNo.medals\n0.52\n2.18\n1.22\n0.00\n1.00\n2.00\n3.00\n5.00\n▇▇▆▃▁\n\n\nElim\n0.52\n19.85\n10.62\n0.00\n12.00\n19.00\n26.50\n60.00\n▅▇▅▁▁\n\n\nElim_career\n0.52\n17.48\n2.86\n0.00\n15.50\n17.58\n19.09\n23.87\n▁▁▁▇▃\n\n\nObj_kills\n0.52\n11.35\n7.18\n0.00\n6.00\n10.00\n16.00\n38.00\n▆▇▃▂▁\n\n\nObj_kills_career\n0.52\n10.13\n2.00\n0.00\n8.34\n10.33\n11.28\n20.29\n▁▁▇▂▁\n\n\nDmg\n0.52\n5948.56\n2977.27\n0.00\n3846.50\n5752.00\n7551.00\n16860.00\n▃▇▅▁▁\n\n\nDmg_career\n0.52\n4982.70\n687.30\n85.29\n4909.00\n5040.00\n5190.50\n8099.00\n▁▁▂▇▁\n\n\nHeal\n0.52\n6481.20\n5538.80\n0.00\n0.00\n6437.50\n10589.25\n21158.00\n▇▅▅▂▁\n\n\nHeal_career\n0.52\n5604.70\n2285.94\n0.00\n4334.00\n6108.00\n6558.00\n9690.00\n▂▁▃▇▃\n\n\nDeath\n0.52\n9.16\n4.06\n0.00\n6.00\n9.00\n12.00\n23.00\n▂▇▆▂▁\n\n\nDeath_career\n0.52\n7.32\n0.63\n3.95\n7.03\n7.16\n7.76\n9.64\n▁▁▇▅▁"
+  },
+  {
+    "objectID": "project.html#wld-versus-player-left-match",
+    "href": "project.html#wld-versus-player-left-match",
+    "title": "DANL 200 Project",
+    "section": "2.2 W/L/D versus Player Left Match",
+    "text": "2.2 W/L/D versus Player Left Match\nThe following shows the percentage of matches the individual either won, lost, or drew depending on if a player left his team or the enemy team.\n\nWLDLeaver &lt;- WLDLeaver %&gt;%\n  group_by(season,Leaver,Result,Total_leaver) %&gt;%\n  count() %&gt;%\n  summarize(Prop = n / Total_leaver * 100) %&gt;%\n  select(season,Leaver,Result,Prop)"
+  },
+  {
+    "objectID": "project.html#wld-versus-team-sr-differential",
+    "href": "project.html#wld-versus-team-sr-differential",
+    "title": "DANL 200 Project",
+    "section": "2.3 W/L/D versus Team SR Differential",
+    "text": "2.3 W/L/D versus Team SR Differential\nThe following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).\n\nSRDiffResult &lt;- SRDiffResult %&gt;%\n  group_by(season,SR.Diff,Result,total_matches) %&gt;%\n  count() %&gt;%\n  summarize( Prop = round( n / total_matches * 100, digits = 1) ) %&gt;%\n  select(season,SR.Diff,Result,Prop)"
+  },
+  {
+    "objectID": "project.html#skill-fluctuation-per-season",
+    "href": "project.html#skill-fluctuation-per-season",
+    "title": "DANL 200 Project",
+    "section": "2.4 Skill Fluctuation Per Season",
+    "text": "2.4 Skill Fluctuation Per Season\nThe following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,)) +\n  xlab('Match Number') +\n  ylab('Skill Rating') +\n  facet_wrap(.~season)"
   },
   {
     "objectID": "posts/starwars/starwars_df.html",
     "href": "posts/starwars/starwars_df.html",
     "title": "Starwars",
     "section": "",
-    "text": "Let’s analyze the starwars data:"
+    "text": "Let’s analyze the starwars data:\nstarwars &lt;- read_csv(\"https://bcdanl.github.io/data/starwars.csv\")"
   },
   {
     "objectID": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
@@ -32,14 +53,14 @@
     "href": "posts/starwars/starwars_df.html#human-vs.-droid",
     "title": "Starwars",
     "section": "Human vs. Droid",
-    "text": "Human vs. Droid\n\nggplot(data = \n         starwars %>% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
+    "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
   },
   {
     "objectID": "posts/beer-markets/beer-markets.html",
     "href": "posts/beer-markets/beer-markets.html",
     "title": "Beer Markets",
     "section": "",
-    "text": "Let’s analyze the beer_data data:"
+    "text": "Let’s analyze the beer_data data:\nbeer_data &lt;- read_csv(\"https://bcdanl.github.io/data/beer_markets.csv\")"
   },
   {
     "objectID": "posts/beer-markets/beer-markets.html#variable-description-for-beer_data-data.frame",
@@ -77,6 +98,13 @@
     "text": "Promotional Impact\nWe’ll assess the impact of promotions on the quantity of beer purchased. For this analysis, we can calculate the average quantity purchased with and without promotions and visualize the difference. We’ll do this for each brand to see which brands are most affected by promotions.\nLet’s begin this analysis by looking at the average quantity purchased with and without promotions for each brand.\n\n# Calculate average quantity purchased with and without promotions for each brand\npromo_impact = beer_data.groupby(['brand', 'promo']).agg({'quantity':'mean'}).reset_index()\n\n# Pivot the data to have promo and non-promo side by side for each brand\npromo_impact_pivot = promo_impact.pivot(index='brand', columns='promo', values='quantity').reset_index()\npromo_impact_pivot.columns = ['brand', 'non_promo', 'promo']\n\n# Calculate the difference in average quantity purchased between promo and non-promo\npromo_impact_pivot['promo_impact'] = promo_impact_pivot['promo'] - promo_impact_pivot['non_promo']\n\n# Sort by the impact of promo\npromo_impact_pivot_sorted = promo_impact_pivot.sort_values('promo_impact', ascending=False)\n\n# Plotting the difference in average quantity purchased between promo and non-promo for each brand\nplt.figure(figsize=(12, 10))\nsns.barplot(x='promo_impact', y='brand', data=promo_impact_pivot_sorted, palette='viridis')\nplt.title('Impact of Promotions on Average Quantity Purchased by Brand')\nplt.xlabel('Difference in Average Quantity Purchased (Promo - Non-Promo)')\nplt.ylabel('Brand')\nplt.show()\n\n\n\n\nThe bar chart illustrates the impact of promotions on the average quantity of beer purchased by brand. A positive value indicates that, on average, more beer is purchased when there is a promotion compared to when there isn’t. Some brands appear to be significantly more influenced by promotions, with customers buying more when the products are on sale or promotion.\nThis comprehensive analysis has provided insights into purchase patterns, demographic preferences, price sensitivity, and the impact of promotions on beer purchases."
   },
   {
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Insightful Analytics",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nNov 2, 2023\n\n\nByeong-Hak Choe\n\n\n9 min\n\n\n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Taylor Johnson",
@@ -98,52 +126,17 @@
     "text": "Experience\nComing Soon"
   },
   {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Insightful Analytics",
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nNov 2, 2023\n\n\nByeong-Hak Choe\n\n\n9 min\n\n\n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "This is a post with executable code with no space in the folder name.\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "project.html",
-    "href": "project.html",
-    "title": "DANL 200 Project",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
     "section": "",
-    "text": "This Project is an exploration of an individual’s performance during four seasons of the competitive FPS game Overwatch."
-  },
-  {
-    "objectID": "project.html#summary-statistics",
-    "href": "project.html#summary-statistics",
-    "title": "DANL 200 Project",
-    "section": "2.1 Summary Statistics",
-    "text": "2.1 Summary Statistics\n\nall_seasons &lt;- all_seasons\n\n\n\n\n  \n\n\n\nskim(all_seasons) %&gt;% \n  select(-n_missing)\n\n\nData summary\n\n\nName\nall_seasons\n\n\nNumber of rows\n582\n\n\nNumber of columns\n38\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n18\n\n\nnumeric\n20\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\nskim_variable\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nStart.SR\n1\n1\n4\n0\n367\n0\n\n\nEnd.SR\n1\n1\n4\n0\n368\n0\n\n\nTeam.SR.avg\n1\n0\n6\n3\n425\n0\n\n\nEnemy.SR.avg\n1\n0\n6\n3\n413\n0\n\n\nRole.1\n1\n0\n7\n276\n5\n0\n\n\nRole.2\n1\n0\n7\n522\n5\n0\n\n\nResult\n1\n3\n4\n0\n3\n0\n\n\nLeaver\n1\n0\n10\n1\n4\n0\n\n\nMap\n1\n0\n21\n276\n19\n0\n\n\nMode\n1\n0\n14\n276\n5\n0\n\n\nMatch.Time\n1\n0\n5\n279\n260\n0\n\n\nElim_medal\n1\n0\n6\n279\n5\n0\n\n\nObj_kills_medal\n1\n0\n6\n280\n5\n0\n\n\nObj_time\n1\n0\n5\n279\n197\n0\n\n\nObj_time_career\n1\n0\n5\n279\n53\n0\n\n\nObj_time_medal\n1\n0\n6\n280\n5\n0\n\n\nDmg_medal\n1\n0\n6\n280\n5\n0\n\n\nHeal_medal\n1\n0\n6\n280\n5\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nseason\n1.00\n6.60\n2.91\n3.00\n4.00\n9.00\n9.00\n10.00\n▇▁▁▁▇\n\n\nGame..\n1.00\n117.20\n84.73\n1.00\n49.00\n97.50\n168.75\n314.00\n▇▇▃▂▂\n\n\nSR.Change\n0.78\n3.23\n25.20\n-46.00\n-23.00\n19.00\n25.00\n77.00\n▇▂▇▂▁\n\n\nTeam.Stack\n0.52\n1.96\n0.92\n1.00\n1.00\n2.00\n2.00\n5.00\n▇▇▃▁▁\n\n\nEnemy.Stack\n0.52\n2.06\n0.97\n1.00\n1.00\n2.00\n2.00\n6.00\n▇▂▁▁▁\n\n\nStreak\n1.00\n0.31\n2.60\n-11.00\n-1.00\n1.00\n2.00\n10.00\n▁▁▇▃▁\n\n\nGold.medals\n0.98\n1.02\n0.95\n0.00\n0.00\n1.00\n1.75\n5.00\n▇▂▁▁▁\n\n\nSilver.medals\n0.92\n0.91\n0.83\n0.00\n0.00\n1.00\n1.00\n4.00\n▆▇▃▁▁\n\n\nBronze.medals\n0.92\n0.69\n0.80\n0.00\n0.00\n1.00\n1.00\n3.00\n▇▆▁▂▁\n\n\nNo.medals\n0.52\n2.18\n1.22\n0.00\n1.00\n2.00\n3.00\n5.00\n▇▇▆▃▁\n\n\nElim\n0.52\n19.85\n10.62\n0.00\n12.00\n19.00\n26.50\n60.00\n▅▇▅▁▁\n\n\nElim_career\n0.52\n17.48\n2.86\n0.00\n15.50\n17.58\n19.09\n23.87\n▁▁▁▇▃\n\n\nObj_kills\n0.52\n11.35\n7.18\n0.00\n6.00\n10.00\n16.00\n38.00\n▆▇▃▂▁\n\n\nObj_kills_career\n0.52\n10.13\n2.00\n0.00\n8.34\n10.33\n11.28\n20.29\n▁▁▇▂▁\n\n\nDmg\n0.52\n5948.56\n2977.27\n0.00\n3846.50\n5752.00\n7551.00\n16860.00\n▃▇▅▁▁\n\n\nDmg_career\n0.52\n4982.70\n687.30\n85.29\n4909.00\n5040.00\n5190.50\n8099.00\n▁▁▂▇▁\n\n\nHeal\n0.52\n6481.20\n5538.80\n0.00\n0.00\n6437.50\n10589.25\n21158.00\n▇▅▅▂▁\n\n\nHeal_career\n0.52\n5604.70\n2285.94\n0.00\n4334.00\n6108.00\n6558.00\n9690.00\n▂▁▃▇▃\n\n\nDeath\n0.52\n9.16\n4.06\n0.00\n6.00\n9.00\n12.00\n23.00\n▂▇▆▂▁\n\n\nDeath_career\n0.52\n7.32\n0.63\n3.95\n7.03\n7.16\n7.76\n9.64\n▁▁▇▅▁"
-  },
-  {
-    "objectID": "project.html#mpg-and-a-type-of-cars",
-    "href": "project.html#mpg-and-a-type-of-cars",
-    "title": "DANL 200 Project",
-    "section": "2.2 MPG and a Type of Cars",
-    "text": "2.2 MPG and a Type of Cars\nThe following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,)) +\n  xlab('Match Number') +\n  ylab('Skill Rating') +\n  facet_wrap(.~season)"
-  },
-  {
-    "objectID": "project.html#wld-versus-team-sr-differential",
-    "href": "project.html#wld-versus-team-sr-differential",
-    "title": "DANL 200 Project",
-    "section": "2.3 W/L/D versus Team SR Differential",
-    "text": "2.3 W/L/D versus Team SR Differential\nThe following shows the percentage of games this individual either won, lost, or drew per season given that his team had a higher skill rating than the enemy team (advantage) or that his team had a lower skill rating than the enemy team (disadvantage).\n\nSRDiffResult &lt;- SRDiffResult %&gt;%\n  group_by(season,SR.Diff,Result,total_matches) %&gt;%\n  count() %&gt;%\n  summarize( Prop = round( n / total_matches * 100, digits = 1) ) %&gt;%\n  select(season,SR.Diff,Result,Prop)"
-  },
-  {
-    "objectID": "project.html#skill-fluctuation-per-season",
-    "href": "project.html#skill-fluctuation-per-season",
-    "title": "DANL 200 Project",
-    "section": "2.4 Skill Fluctuation Per Season",
-    "text": "2.4 Skill Fluctuation Per Season\nThe following is a visualization of the fluctuation of this individual’s Skill Ranking (SR) after each match for each of the four seasons data is available.\n\nggplot(data = d3) +\n  geom_point(mapping = aes(x = Game..,y = End.SR,)) +\n  xlab('Match Number') +\n  ylab('Skill Rating') +\n  facet_wrap(.~season)"
-  },
-  {
-    "objectID": "project.html#wld-versus-player-left-match",
-    "href": "project.html#wld-versus-player-left-match",
-    "title": "DANL 200 Project",
-    "section": "2.2 W/L/D versus Player Left Match",
-    "text": "2.2 W/L/D versus Player Left Match\nThe following shows the percentage of matches the individual either won, lost, or drew depending on if a player left his team or the enemy team.\n\nWLDLeaver &lt;- WLDLeaver %&gt;%\n  group_by(season,Leaver,Result,Total_leaver) %&gt;%\n  count() %&gt;%\n  summarize(Prop = n / Total_leaver * 100) %&gt;%\n  select(season,Leaver,Result,Prop)"
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   }
 ]
