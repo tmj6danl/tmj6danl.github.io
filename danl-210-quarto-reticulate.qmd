@@ -25,13 +25,13 @@ format:
 ---
 
 ```{r}
-#| include: false
+#|include: false
 
-# install.packages("reticulate")
+install.packages("reticulate")
 library(reticulate)
 
 # Provide the pahname of the anaconda3 directory:
-use_condaenv("/Users/bchoe/anaconda3", required = TRUE)
+use_condaenv("/Users/tmjoh/anaconda3", required = TRUE)
 ```
 
 
@@ -155,7 +155,7 @@ ggplot(oj, aes(x = log(sales), y = log(price),
 #| echo: false
 #| warning: false
 
-# install.packages("DT")
+install.packages("DT")
 library(DT)
 datatable(oj)
 ```
@@ -166,7 +166,7 @@ In `*.ipynb` on Google Colab, we can use `itables` or just Google Colab's defaul
 ```{python}
 #| eval: false
 
-# !pip install itables
+ !pip install itables
 from itables import init_notebook_mode, show
 init_notebook_mode(all_interactive=False)
 
