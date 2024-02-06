@@ -1,35 +1,45 @@
 ---
 title: "DANL 210: Data Preparation and Management"
-subtitle: Quarto Template with only Python Code
+subtitle: Quarto Template<br><br> 
 author: 
+
   - name: YOUR NAME
+    affiliations: 
+      - name: SUNY Geneseo
+
   - name: YOUR COWORKER 1
-  
+    affiliations: 
+      - name: SUNY Brockport
+    
 date: last-modified
-
-jupyter: python3
-
-execute:
-  echo: true
-  eval: true
-  message: false
-  warning: false
-  fig-width: 9
 
 format: 
   html:
     toc: true
     number-sections: true
-    code-fold: show       # https://quarto.org/docs/output-formats/html-code.html  
-    code-tools: true      # https://quarto.org/docs/reference/cells/cells-jupyter.html
+    code-fold: false       # https://quarto.org/docs/output-formats/html-code.html
+    code-tools: true
+    code-link: true
     highlight-style: atom-one # atom-one tango espresso
+
+execute: 
+  warning: false
+  message: false
+  echo: true
+  eval: true
+  fig-width: 9
 ---
 
-```{r}
-reticulate::use_condaenv("C:/Users/tmjoh/anaconda3", required = TRUE)
-```
 
-# Python Basics 
+# Python Basics
+
+## What is Python?
+
+Python is a high-level, interpreted programming language. This is a simple Python code:
+
+```{python}
+print('Hello, World!')
+```
 
 ## Variables and Data Types
 
@@ -104,8 +114,11 @@ my_dict = {'name': 'John', 'age': 36}
 
 ## Import Python libraries
 
+`!pip install dtale` to install `dtale` library
 ```{python}
+!pip install dtale
 import pandas as pd
+import dtale
 ```
 
 
@@ -117,25 +130,13 @@ oj = pd.read_csv('https://bcdanl.github.io/data/dominick_oj.csv')
 ```{python}
 #| code-fold: true
 #| code-summary: "Code!"
-
 oj
 ```
 
 
 ```{python}
-oj.describe()
+dtale.show(oj) 
 ```
 
 
 
-### Interactive DataFrame with `itables` library
-
-In `*.ipynb` on Google Colab, we can use `itables` or just Google Colab's default to print DataFrame.
-
-```{python}
-!pip install itables
-from itables import init_notebook_mode, show
-init_notebook_mode(all_interactive=False)
-
-show(oj)
-```

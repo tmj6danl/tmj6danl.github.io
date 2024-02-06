@@ -12,8 +12,13 @@ website:
       - text: Blog
         href: Resume.pdf
       - text: Python Data Analysis
-        href: basic-python-intro.ipynb
-        href: danl-210-quarto.qmd
+        menu:
+        - text: Python Basics
+          href: basic-python-intro.ipynb
+        - text: Python Basics with Pandas
+          href: danl-210-py-only.qmd
+        - text: Using Python and R Together
+          href: danl-210-quarto-reticulate.qmd
   page-footer: 
     center: "Powered with GitHub and Quarto<br>© YOUR NAME, 2023"
 
