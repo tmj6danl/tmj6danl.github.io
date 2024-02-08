@@ -26,7 +26,7 @@ format:
 ---
 
 ```{r}
-reticulate::use_condaenv("C:/Users/tmjoh/anaconda3", required = TRUE)
+reticulate::use_python("C://Users//tmjoh//anaconda3", required = TRUE)
 ```
 
 # Python Basics 

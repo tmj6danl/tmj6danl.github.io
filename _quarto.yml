@@ -17,8 +17,8 @@ website:
           href: basic-python-intro.ipynb
         - text: Python Basics with Pandas
           href: danl-210-quarto-py-only.qmd
-        - text: Using Python and R Together
-          href: danl-210-quarto-reticulate.qmd
+#        - text: Using Python and R Together
+#          href: danl-210-quarto-reticulate.qmd
   page-footer: 
     center: "Powered with GitHub and Quarto<br>© YOUR NAME, 2023"
 
